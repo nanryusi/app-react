@@ -66,3 +66,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+## docker build -f Dockerfile.dev -t 프로젝트명:버전 .
+## docker run -it -p 3000:3000 프로젝트명
+## docker-compose up  -d --build
