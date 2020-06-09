@@ -34,7 +34,7 @@ export const deleteProduct = (product) => ({
 });
 
 export const deleteSupplier = (supplier) => ({
-  Type: DELETE,
+  type: DELETE,
   dataType: SUPPLIERS,
   payload: supplier.id,
 });

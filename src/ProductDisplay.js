@@ -3,11 +3,7 @@ import { ProductTable } from './ProductTable';
 import { ProductEditor } from './ProductEditor';
 import { connect } from 'react-redux';
 //import { saveProduct, deleteProduct } from './store';
-import {
-  saveProduct,
-  deleteProduct,
-  EditorConnector,
-} from './store/EditorConnector';
+import { EditorConnector } from './store/EditorConnector';
 import { PRODUCTS } from './store/dataTypes';
 import { TableConnector } from './store/TableConnector';
 import { startCreatingProduct } from './store/stateActions';
@@ -63,7 +59,7 @@ export const ProductDisplay = connectFunction(
       //if (this.state.showEditor) {
       if (this.props.editing) {
         return (
-          <ProductEditor key={this.props.selected.id || -1}></ProductEditor>
+          <ConnectedEditor key={this.props.selected.id || -1}></ConnectedEditor>
           // <ProductEditor
           //   key={this.state.selectedProduct.id || -1}
           //   product={this.state.selectedProduct}

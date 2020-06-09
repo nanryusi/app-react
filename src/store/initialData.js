@@ -9,7 +9,7 @@ export const initialData = {
     ],
     [SUPPLIERS]: [
       { id: 1, name: 'Zoom Shoes', city: 'London', products: [1] },
-      { id: 1, name: 'Cosy Gear', city: 'New York', products: [2, 3] },
+      { id: 2, name: 'Cosy Gear', city: 'New York', products: [2, 3] },
     ],
   },
   stateData: {

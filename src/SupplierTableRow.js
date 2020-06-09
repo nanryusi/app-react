@@ -18,7 +18,7 @@ export class SupplierTableRow extends Component {
           </button>
           <button
             className="btn btn-sm btn-danger m-1"
-            onclick={() => this.props.deleteCallback(s)}
+            onClick={() => this.props.deleteCallback(s)}
           >
             Delete
           </button>
