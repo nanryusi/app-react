@@ -70,7 +70,7 @@ export const SupplierDisplay = connectFunction(
       } else {
         return (
           <div className="m-2">
-            <ConnectedTable></ConnectedTable>
+            <ConnectedTable needSuppliers={true}></ConnectedTable>
             {/* <SupplierTable
               suppliers={this.props.suppliers}
               editCallback={this.startEditing}

@@ -37,10 +37,24 @@ export const TableConnector = (dataType, presentationComponent) => {
   //   })),
   // });
 
-  const mapDispatchToProps = {
-    editCallback:
-      dataType === PRODUCTS ? startEditingProduct : startEditingSupplier,
-    deleteCallback: dataType === PRODUCTS ? deleteProduct : deleteSupplier,
+  // const mapDispatchToProps = {
+  //   editCallback:
+  //     dataType === PRODUCTS ? startEditingProduct : startEditingSupplier,
+  //   deleteCallback: dataType === PRODUCTS ? deleteProduct : deleteSupplier,
+  // };
+
+  const mapDispatchToProps = (dispatch, ownProps) => {
+    if (!ownProps.needSuppliers) {
+      return {
+        editCallback: (...args) => dispatch(startEditingProduct(...args)),
+        deleteCallback: (...args) => dispatch(deleteProduct(...args)),
+      };
+    } else {
+      return {
+        editCallback: (...args) => dispatch(startEditingSupplier(...args)),
+        deleteCallback: (...args) => dispatch(deleteSupplier(...args)),
+      };
+    }
   };
 
   return connect(mapStateToProps, mapDispatchToProps)(presentationComponent);

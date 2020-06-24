@@ -32,5 +32,15 @@ export const EditorConnector = (dataType, presentationComponent) => {
   //   },
   // });
 
-  return connect(mapStateToProps, mapDispatchToProps)(presentationComponent);
+  const mergeProps = (dataProps, functionProps, ownProps) => ({
+    ...dataProps,
+    ...functionProps,
+    ...ownProps,
+  });
+
+  return connect(
+    mapStateToProps,
+    mapDispatchToProps,
+    mergeProps
+  )(presentationComponent);
 };
